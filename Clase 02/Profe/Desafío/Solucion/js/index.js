@@ -3,6 +3,7 @@ var semana = ['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'
 var diaSemana = prompt('Ingresa una dia de la semana')
 switch (diaSemana) {
 	case 'Sabado':
+	case 'Sábado':
 		console.log('Es fin de semana')
 		break
 	case 'Domingo':
