@@ -20,7 +20,8 @@ function semanaCheck(day) {
 				break
 		}	
 
-}
+} 
+
 
 semanaCheck(dia1)
 
@@ -29,3 +30,13 @@ semanaCheck(dia2)
 
 var dia3 = prompt('Y otro mas')
 semanaCheck(dia3)
+
+
+var nombre = prompt('Ingresa tu nombre')
+var apellido = prompt('Ingresa tu apellido')
+
+function fullName(name, lastName) {
+	console.log('Hola, ' + name + ' ' + lastName)
+}
+
+fullName(nombre,apellido)
