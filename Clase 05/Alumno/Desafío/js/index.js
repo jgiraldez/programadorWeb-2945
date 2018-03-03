@@ -1,16 +1,7 @@
-function Student (firstName, lastName, age, address) {
+function Student (title, year, director, actors) {
 	var id = Math.random()
-	var showfullName = firstName + ' ' + lastName
 	var modified = false
-
-	this.isLegalAge = function () {
-		if (age >= 18) {
-			return true
-		} else {
-			return false
-		}
-	}
-
+//// setters
 	this.setfirstName =  function (newFirstName) {
 		firstName = newFirstName
 		modified = true
@@ -21,22 +12,40 @@ function Student (firstName, lastName, age, address) {
 		modified = true
 	}
 
-	this.getShowFullName = function () {
-		return showfullName
+	this.setDirector = function (newDirector) {
+		director = newDirector
+		modified = true
 	}
 
-	this.getAddress = function () {
-		return address
+	this.setActor = function (newActor) {
+		actors.push(newActor)
+		modified = true
+	}
+//// getters
+	this.getTitle = function () {
+		return title
+	}
+
+	this.getYear = function () {
+		return year
+	}
+
+	this.getDirector = function () {
+		return director
+	}
+
+	this.getActors = function () {
+		return actors
 	}
 
 }
 
-var StudentAddress = {
-	street: 'Cucha cucha',
-    number: 1234
-    actors: ['Cristoph Waltz']
-    }
+
+var pelicula = {
+	title: 'Bastardos sin Gloria',
+	year: 2009,
+	director: 'Quentin Tarantino',
+	actors: ['Cristoph Waltz']
 }
 
-var newStudent = new Student('Laura','Lopez','21', StudentAddress)
-console.log(newStudent.getShowFullName(),newStudent.isLegalAge(),newStudent.getAddress())
+var newStudent = new Student(pelicula.title,pelicula.year,pelicula.director, pelicula.actors)
