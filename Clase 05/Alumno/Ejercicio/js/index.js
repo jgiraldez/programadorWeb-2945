@@ -1,5 +1,3 @@
-
-
 function Student (firstName, lastName, age, address) {
 	var id = Math.random()
 	var showfullName = firstName + ' ' + lastName
@@ -33,5 +31,10 @@ function Student (firstName, lastName, age, address) {
 
 }
 
-var newStudent = new Student('Laura','Lopez','21','Cucha cucha')
+var StudentAddress = {
+	street: 'Cucha cucha',
+    number: 1234
+}
+
+var newStudent = new Student('Laura','Lopez','21', StudentAddress)
 console.log(newStudent.getShowFullName(),newStudent.isLegalAge(),newStudent.getAddress())
