@@ -6,6 +6,7 @@ var parsedNumber1 = parseInt(number1, 10)
 
 var parsedNumber2 = parseInt(number2, 10)
 
+<<<<<<< HEAD
 console.log('La suma es ', parsedNumber1 + parsedNumber2)
 
 console.log('La resta es ', parsedNumber1 - parsedNumber2)
@@ -16,4 +17,20 @@ if (parsedNumber2 === 0) {
   console.log('No se puede dividir por cero')
 } else {
   console.log('La división es ', parsedNumber1 / parsedNumber2)
+=======
+if (isNaN(parsedNumber1) || isNaN(parsedNumber2)) {
+  console.log('Alguno no es número')
+} else {
+  console.log('La suma es ', parsedNumber1 + parsedNumber2)
+
+  console.log('La resta es ', parsedNumber1 - parsedNumber2)
+
+  console.log('La multiplicación es ', parsedNumber1 * parsedNumber2)
+
+  if (parsedNumber2 === 0) {
+    console.log('No se puede dividir por cero')
+  } else {
+    console.log('La división es ', parsedNumber1 / parsedNumber2)
+  }
+>>>>>>> 254da142665a5d923960699adc34c85957a1d517
 }
