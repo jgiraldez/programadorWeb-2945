@@ -24,7 +24,11 @@ localStorage.setItem('lista', JSON.stringify(studentsList))
 
 var nombreBuscado = prompt('nombre a eliminar').toUpperCase()
 
-var listaParseada = JSON.parse(localStorage.getItem('lista'))
+if (localStorage.getItem('lista')) {
+  listaParseada = JSON.parse(localStorage.getItem('lista'))
+} else {
+  listParseada = []
+}
 
 function buscarBorrar(alumno) {
   for (var i = 0; i < listaParseada.length; i++) {
