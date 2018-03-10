@@ -19,6 +19,9 @@ var studentsList = [
   'ANA',
   'FLORENCIA'
 ]
+
+console.log(studentsList)
+
 // A MAYUSCULAS
 
 var nombreAlumno = prompt('nombe de alumno')
@@ -39,7 +42,28 @@ function buscarAlumno(buscado) {
       break
     }
   }
-  console.log(index)
+  return index
 }
+console.log(buscarAlumno(nombreAlumno))
 
-buscarAlumno(nombreAlumno)
+// AGREGAR ALUMNO AL ARRAY
+function agregarAlumno() {
+  do {
+    var studentName = prompt('Ingrese el alumno a agregar')
+  } while (!studentName)
+  studentsList.push(studentName.toUpperCase())
+}
+agregarAlumno()
+
+// ELIMINAR ALUMNOS DEL ARRAY
+function borrarAlumno(chauAlumno) {
+  var index2 = buscarAlumno(chauAlumno)
+  if (index2 != -1) {
+    studentsList.splice(index2, 1)
+  }
+}
+console.log(studentsList)
+borrarAlumno('Juan')
+console.log(studentsList)
+
+// GESTIONAR ALUMNOS
