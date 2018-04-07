@@ -72,24 +72,28 @@ function agregarAlumno(addName, addDni) {
   })
   var stringStudentList = JSON.stringify(studentList)
   localStorage.setItem('lista', stringStudentList)
+  appendStudent(addName,addDni)
 }
 
 // BOTON BORRAR
 function borrarAlumno(valorDni) {
   var studentList = localStorage.getItem('lista')
-  //  studentList = studentList ? JSON.parse(studentList) : []
-  if (buscarDni(valorDni) === -1) {
-    studentlist.splice(index, 1, 0)
+  studentList = studentList ? JSON.parse(studentList) : []
+  var index = buscarDni(valorDni)
+  if (index >= 0) {
+    studentList.splice(index, 1)
     var stringStudentList = JSON.stringify(studentList)
     localStorage.setItem('lista', stringStudentList)
+
   } else {
     alert('el usuario no existe')
   }
 }
 
-var submitButton = document.getElementById('deleteStudentButton')
 
-submitButton.onclick = function(event) {
+var submitButtonDelete = document.getElementById('deleteStudentButton')
+
+submitButtonDelete.onclick = function(event) {
   var valueDni = document.getElementById('deleteDni').value
   borrarAlumno(valueDni)
 }
@@ -98,8 +102,69 @@ submitButton.onclick = function(event) {
 var submitButton = document.getElementById('addStudentButton')
 
 submitButton.onclick = function(event) {
-  var valueName = document.getElementById('firstName').value
+  var valueNombre = document.getElementById('firstName').value
   var valueDni = document.getElementById('dni').value
-  console.log(valueName, valueDni)
-  agregarAlumno(valueName, valueDni)
+  agregarAlumno(valueNombre, valueDni)
+}
+
+// buscar alumno
+function buscarAlumno(alumnoPasado) {
+  var index = -1
+
+  var studentList = localStorage.getItem('lista')
+  studentList = studentList ? JSON.parse(studentList) : []
+
+  for (var i = 0; i < studentList.length; i++) {
+    var student = studentList[i]
+    if (student.firstName.indexOf(alumnoPasado) !== -1) {
+      index = i
+      break
+    }
+  }
+  return index
+}
+
+/* var submitButtonBuscarAlumno = document.getElementById('searchStudentButton')
+
+submitButtonBuscarAlumno.onclick = function(event) {
+  var valueAlumnoBuscado = document.getElementById('searchText').value
+  buscarAlumno(valueAlumnoBuscado)
+}
+*/
+
+var rootContainer = document.getElementById('mainList')
+
+rootContainer.innerHTML = '<ul class="list-group" id="list" </ul>'
+
+var listContainer = document.getElementById('list')
+
+function appendStudent(nombre, dni) {
+  var htmlFullName = '<h1>' + nombre + '</h1>'
+
+  var htmlDni = '<p>' + dni + '</p>'
+
+  var li = document.createElement('li')
+
+  li.className = 'list-group-item'
+
+  li.innerHTML = htmlFullName + htmlDni
+
+  li.id = dni
+
+  listContainer.appendChild(li)
+}
+
+function removeStudent(studentPosition) {
+
+  }
+
+var studentList = localStorage.getItem('lista')
+studentList = studentList ? JSON.parse(studentList) : []
+  
+for (var i = 0; i < studentList.length; i++) {
+  
+  nombre = studentList[i].firstName
+  apellido = studentList[i].lastName
+  dni = studentList[i].dni
+  appendStudent(nombre, apellido, dni)
 }
