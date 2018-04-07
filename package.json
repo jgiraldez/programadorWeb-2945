@@ -27,11 +27,30 @@
       "jquery"
     ],
     "rules": {
+<<<<<<< HEAD
       "space-in-parens": [0],
       "space-before-function-paren": [0],
       "quotes": ["error", "single"],
      "computed-property-spacing": [0],
      "semi":[0]
+=======
+      "space-in-parens": [
+        0
+      ],
+      "space-before-function-paren": [
+        0
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "computed-property-spacing": [
+        0
+      ],
+      "semi": [
+        0
+      ]
+>>>>>>> 2f2ea96d98d408f422ea2a38623b74ba95f15270
     }
   },
   "devDependencies": {

@@ -10,5 +10,9 @@
    - `addClass`
    - `removeClass`
    - `.val()``
+<<<<<<< HEAD
    - `this`
    - ``
+=======
+   - `this`
+>>>>>>> 2f2ea96d98d408f422ea2a38623b74ba95f15270

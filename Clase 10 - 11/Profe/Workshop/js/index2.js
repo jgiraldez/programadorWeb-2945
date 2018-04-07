@@ -38,6 +38,7 @@ function createStudentNodeExtended (student) {
   li.innerHTML =
     '<h1>' +
     student.firstName +
+<<<<<<< HEAD
     '<h1><h1>' +
     student.lastName +
     '<h1><h3>DNI: ' +
@@ -45,6 +46,15 @@ function createStudentNodeExtended (student) {
     '<h3><p>' +
     student.email +
     '<p>'
+=======
+    '</h1><h1>' +
+    student.lastName +
+    '</h1><h3>DNI: ' +
+    student.dni +
+    '</h3><p>' +
+    student.email +
+    '</p>'
+>>>>>>> 2f2ea96d98d408f422ea2a38623b74ba95f15270
 
   li.className = 'list-group-item'
 
@@ -152,7 +162,11 @@ document.getElementById('email').onblur = function (event) {
 
 // Agrego el evento onclick para agregar un estudiante
 
+<<<<<<< HEAD
 // VE: Agrego los campos lastnName e email
+=======
+// VE: Agrego los campos lastName e email
+>>>>>>> 2f2ea96d98d408f422ea2a38623b74ba95f15270
 
 addStudentButton.onclick = function (event) {
   var firstNameNode = document.getElementById('firstName')
@@ -205,11 +219,19 @@ deleteStudentButton.onclick = function () {
 
   var value = dniNode.value
 
+<<<<<<< HEAD
   var studenNode = document.getElementById(value)
 
   var mainList = document.getElementById('mainList')
 
   mainList.removeChild(studenNode)
+=======
+  var studentNode = document.getElementById(value)
+
+  var mainList = document.getElementById('mainList')
+
+  mainList.removeChild(studentNode)
+>>>>>>> 2f2ea96d98d408f422ea2a38623b74ba95f15270
 
   var parsedDni = parseInt(value, 10)
 
@@ -299,8 +321,11 @@ searchStudentButton.onclick = function (event) {
   searchList.innerHTML = ''
 
   if (index !== -1) {
+<<<<<<< HEAD
     deleteStudentButton.disabled = false
 
+=======
+>>>>>>> 2f2ea96d98d408f422ea2a38623b74ba95f15270
     var studentsList = getLocalStorageList()
 
     var studentNode = createStudentNodeExtended(studentsList[index])
